@@ -16,7 +16,7 @@ const findAllUsers = () => {
 }
 
 const findUserById = (id) => {
-    const data = usersDB.find( user === user.id == id)
+    const data = usersDB.find( user => user.id == id)
     return data
 }
 
@@ -35,8 +35,10 @@ const createUser = (obj) => {
 }
 
 
+
 module.exports = {
     findAllUsers,
     findUserById,
-    createUser
+    createUser,
+    
 }

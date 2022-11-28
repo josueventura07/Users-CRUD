@@ -9,7 +9,7 @@ const getAllUsers = (req, res) => {
 const getUserById = (req, res) => {
     const id = req.params.id
 
-    const data = usersControllers(id)
+    const data = usersControllers.findUserById(id)
 
      if(data) {
         res.status(200).json(data)
@@ -38,8 +38,11 @@ const postCreateUser = (req, res) => {
     }
 }
 
+
+
 module.exports = {
     getAllUsers,
     getUserById,
-    postCreateUser
+    postCreateUser,
+    
 }
