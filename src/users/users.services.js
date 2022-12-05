@@ -51,13 +51,13 @@ const patchUser = (req, res) => {
 
 const deleteUser = (req, res) => {
     const id = req.params.id
-    
-            if(id) {
+    const data = usersControllers.usersDB.find(user => user.id == id)
+            if(data) {
             usersControllers.deleteUser(id)
-            res.status(200).json({message: 'Deleted successfully'})
+            res.status(200).json({message: `UserId: ${id} deleted successfully`})
 
         } else {
-            res.status(400).json({message: 'Invalid Data'})
+            res.status(400).json({message: `UserId: ${id} not available`})
         }
 
    

@@ -58,9 +58,7 @@ const deleteUser = (id) => {
     
         if(data) {
             usersDB.splice(data, 1)
-        } else {
-            return null
-        }
+        } 
    
       return data
 //    usersDB.splice(index, 1, update)
@@ -75,5 +73,6 @@ module.exports = {
     findUserById,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    usersDB
 }
