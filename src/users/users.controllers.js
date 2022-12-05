@@ -34,11 +34,46 @@ const createUser = (obj) => {
     return newUser
 }
 
+const updateUser = (id, obj) => {
+    
+    const data = usersDB.find(user => user.id == id)
+    // const index = usersDB.findIndex( obj => obj == obj.id)
+    
+        data.id,
+        data.first_name = obj.first_name,
+        data.last_name = obj.last_name,
+        data.email = obj.email,
+        data.password = obj.password,
+        data.birthday = obj.birthday
+   
+      return data
+//    usersDB.splice(index, 1, update)
+//    return update          
+}
+
+const deleteUser = (id) => {
+    
+    const data = usersDB.find(user => user.id == id)
+    // const index = usersDB.findIndex( user => user.id == id)
+    
+        if(data) {
+            usersDB.splice(data, 1)
+        } else {
+            return null
+        }
+   
+      return data
+//    usersDB.splice(index, 1, update)
+//    return update          
+}
+
+
 
 
 module.exports = {
     findAllUsers,
     findUserById,
     createUser,
-    
+    updateUser,
+    deleteUser
 }
